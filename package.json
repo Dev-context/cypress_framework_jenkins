@@ -1,0 +1,33 @@
+{
+  "name": "cypress_cucumber",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "cypress:open": "cypress open --e2e -b electron",
+    "chrome-regression": "cypress run -e TAGS=\"@regression \" --headed -b chrome",
+    "cy:run": "cypress run --config video=true --env allure=true -b chrome",
+    "allure:report": "allure generate allure-results — clean -o allure-report",
+    "allure:clear": "del-cli --force allure-report && del-cli --force allure-results && del-cli --force ./cypress/screenshots",
+    "allure:open": "allure open allure-report",
+    "test": "npm run allure:clear && npm run cy:run && npm run allure:report|| npm run allure:report"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "allure-commandline": "^2.22.1",
+    "cypress": "^12.13.0",
+    "mocha-allure-reporter": "^1.4.0"
+  },
+  "devDependencies": {
+    "@shelex/cypress-allure-plugin": "^2.40.0",
+    "@simonsmith/cypress-image-snapshot": "^7.0.0",
+    "cypress-cucumber-preprocessor": "^4.3.1",
+    "del-cli": "^5.0.0"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true,
+    "step_definitions": "cypress/e2e"
+  }
+}

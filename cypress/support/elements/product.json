@@ -1,0 +1,6 @@
+{
+    "productsTiTle": "span[class=title]",
+    "addcartBtn": "#add-to-cart-sauce-labs-backpack",
+    "removeBtn": "#remove-sauce-labs-backpack",
+    "cartBadgeNumber":".shopping_cart_badge"
+}

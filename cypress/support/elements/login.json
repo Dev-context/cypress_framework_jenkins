@@ -1,0 +1,6 @@
+{
+    "username": "#user-name",
+    "password": "#password",
+    "btn_login": "#login-button",
+    "ErroMessageLogin":"[data-test=error]"
+}
